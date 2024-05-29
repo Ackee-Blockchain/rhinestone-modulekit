@@ -150,7 +150,7 @@ contract OwnableExecutor is ERC7579ExecutorBase {
         }
 
         // execute the transaction on the owned account
-        IERC7579Account(ownedAccount).executeFromExecutor(ModeLib.encodeSimpleSingle(), callData);
+        IERC7579Account(ownedAccount).executeFromExecutor{value: msg.value}(ModeLib.encodeSimpleSingle(), callData);
     }
 
     /**
@@ -172,7 +172,7 @@ contract OwnableExecutor is ERC7579ExecutorBase {
         }
 
         // execute the batch of transaction on the owned account
-        IERC7579Account(ownedAccount).executeFromExecutor(ModeLib.encodeSimpleBatch(), callData);
+        IERC7579Account(ownedAccount).executeFromExecutor{value: msg.value}(ModeLib.encodeSimpleBatch(), callData);
     }
 
     /*//////////////////////////////////////////////////////////////////////////
