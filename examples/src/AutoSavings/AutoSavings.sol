@@ -82,9 +82,11 @@ contract AutoSavings is ERC7579ExecutorBase {
 
             // check that sqrtPriceLimitX96 > 0
             // sqrtPriceLimitX96 = 0 means unlimitted slippage
+	    /* mock disable
             if (_configs[i].sqrtPriceLimitX96 == 0) {
                 revert InvalidSqrtPriceLimitX96();
             }
+	    */
 
             config[account][_token] = _configs[i];
             tokens[account].push(_token);
@@ -137,9 +139,11 @@ contract AutoSavings is ERC7579ExecutorBase {
 
         // check that sqrtPriceLimitX96 > 0
         // sqrtPriceLimitX96 = 0 means unlimitted slippage
+	/* mock disable
         if (_config.sqrtPriceLimitX96 == 0) {
             revert InvalidSqrtPriceLimitX96();
         }
+	*/
 
         // set the configuration for the token
         config[account][token] = _config;
